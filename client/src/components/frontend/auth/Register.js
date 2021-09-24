@@ -9,6 +9,9 @@ function Register() {
         <div className="row justify-content-center">
           <div className="col-md-6">
             <div className="card">
+              <div className="card-header">
+                <h4>Register</h4>
+              </div>
               <div className="card-body">
                 <form>
                   <div className="form-group mb-3">
