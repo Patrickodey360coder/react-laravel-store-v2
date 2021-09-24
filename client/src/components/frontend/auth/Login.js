@@ -1,10 +1,11 @@
 import React from 'react'
-
+import Navbar from '../../../layouts/frontend/Navbar'
 function Login() {
   return (
-    <div>
+    <>
+      <Navbar/>
       Login Page
-    </div>
+    </>
   )
 }
 
