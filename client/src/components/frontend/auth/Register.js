@@ -1,7 +1,28 @@
-import React from 'react'
+import React, {useState} from 'react'
 import Navbar from '../../../layouts/frontend/Navbar'
 
 function Register() {
+  const [registerInput, setRegister] =  useState({
+    name: '',
+    email: '',
+    password: ''
+  });
+
+  const handleInput = (e) => {
+    e.persist();
+    setRegister({...registerInput, [e.target.name]: e.target.value});
+  }
+
+  const registerSubmit = (e) => {
+    e.preventDefault();
+
+    const data = {
+      name: registerInput.name,
+      email: registerInput.email,
+      password: registerInput.password
+    }
+  }
+
   return (
     <>
       <Navbar />
@@ -13,22 +34,18 @@ function Register() {
                 <h4>Register</h4>
               </div>
               <div className="card-body">
-                <form>
+                <form onSubmit={registerSubmit}>
                   <div className="form-group mb-3">
                     <label>Full name</label>
-                    <input type="text" name="name" className="form-control" value="" />
+                    <input type="text" name="name" onChange={handleInput} value={registerInput.name} className="form-control" value="" />
                   </div>
                   <div className="form-group mb-3">
                     <label>Email ID</label>
-                    <input type="email" name="email" className="form-control" value="" />
+                    <input type="email" name="email" onChange={handleInput} value={registerInput.email} className="form-control" value="" />
                   </div>
                   <div className="form-group mb-3">
                     <label>Password</label>
-                    <input type="password" name="name" className="form-control" value="" />
-                  </div>
-                  <div className="form-group mb-3">
-                    <label>Confirm Password</label>
-                    <input type="text" name="name" className="form-control" value="" />
+                    <input type="password" name="name" onChange={handleInput} value={registerInput.password} className="form-control" value="" />
                   </div>
                   <div className="form-group mb-3">
                     <button type="submit" className="btn btn-primary"> Register</button>
