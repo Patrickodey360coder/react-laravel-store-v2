@@ -1,5 +1,6 @@
 import React, {useState} from 'react'
 import Navbar from '../../../layouts/frontend/Navbar'
+import axios from 'axios'
 
 function Register() {
   const [registerInput, setRegister] =  useState({
