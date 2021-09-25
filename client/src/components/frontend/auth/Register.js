@@ -21,6 +21,10 @@ function Register() {
       email: registerInput.email,
       password: registerInput.password
     }
+
+    axios.post(`/api/register`).then( res => {
+      
+    })
   }
 
   return (
