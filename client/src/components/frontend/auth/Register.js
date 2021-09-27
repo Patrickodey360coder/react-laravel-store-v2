@@ -22,7 +22,7 @@ function Register() {
       email: registerInput.email,
       password: registerInput.password
     }
-
+    console.log(data)
     axios.post(`/api/register`).then( res => {
       
     })
