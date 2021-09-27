@@ -24,10 +24,10 @@ function Register() {
     }
     console.log(data)
     axios.get('/sanctum/csrf-cookie').then(response => {
-      axios.post(`/api/register`).then( res => {
+      axios.post(`http://localhost:8000/api/register`, data).then( res => {
       
       });
-    })
+    });
   }
 
   return (
