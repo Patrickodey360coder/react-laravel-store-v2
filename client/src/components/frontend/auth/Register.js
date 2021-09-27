@@ -23,8 +23,10 @@ function Register() {
       password: registerInput.password
     }
     console.log(data)
-    axios.post(`/api/register`).then( res => {
+    axios.get('/sanctum/csrf-cookie').then(response => {
+      axios.post(`/api/register`).then( res => {
       
+      });
     })
   }
 
